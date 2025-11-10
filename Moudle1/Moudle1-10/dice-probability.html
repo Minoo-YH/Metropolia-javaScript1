@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dice Sum Probability</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, #1f2937, #020617),
+        url("https://i.imgur.com/6M513pS.png");
+      background-size: cover;
+      color: #e5e7eb;
+    }
+
+    .card {
+      position: relative;
+      text-align: center;
+      padding: 32px 42px;
+      border-radius: 24px;
+      background: linear-gradient(145deg, #020617dd, #111827ee);
+      box-shadow:
+        0 0 25px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(56, 189, 248, 0.25);
+      border: 2px solid rgba(56, 189, 248, 0.7);
+      max-width: 520px;
+      width: 90%;
+      overflow: hidden;
+    }
+
+    .card::before,
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 24px;
+      border: 3px solid rgba(248, 250, 252, 0.12);
+      pointer-events: none;
+    }
+
+    .card::before {
+      top: -40px;
+      left: -40px;
+    }
+
+    .card::after {
+      bottom: -40px;
+      right: -40px;
+    }
+
+    .emoji {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 26px;
+      letter-spacing: 1px;
+      color: #facc15;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .dice-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .dice {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #111827;
+      border: 2px solid #f97316;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="dice-row">
+      <div class="dice">⚀</div>
+      <div class="dice">⚄</div>
+      <div class="dice">⚃</div>
+    </div>
+    <div class="emoji">🎲🎮</div>
+    <h1>Dice Sum Probability</h1>
+    <p class="subtitle">
+      You will be asked for the number of dice and the desired sum.
+      The probability is estimated by running a lot of game rounds.
+    </p>
+    <p id="result">Waiting for your input...</p>
+    <p class="note">
+      Example: 2 dice &amp; sum 7 → probability ≈ 15–17%
+    </p>
+  </div>
+
+  <script src="dice-probability.js"></script>
+</body>
+</html>
+

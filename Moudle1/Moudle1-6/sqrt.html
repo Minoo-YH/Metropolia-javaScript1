@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Square Root Calculator</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #ffe6f1, #e3f2ff);
+      color: #444;
+    }
+
+    .card {
+      text-align: center;
+      padding: 30px 40px;
+      border-radius: 20px;
+      background: #ffffffcc;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border: 1px solid #ffd6e8;
+      max-width: 420px;
+      width: 90%;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 26px;
+      color: #ff6f91;
+    }
+
+    .subtitle {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .emoji {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="emoji">🌸📐</div>
+    <h1>Square Root Calculator</h1>
+    <p class="subtitle">
+      Answer the pop-up questions and see the result here.
+    </p>
+    <p id="result">Waiting for your decision...</p>
+  </div>
+
+  <script src="sqrt.js"></script>
+</body>
+</html>

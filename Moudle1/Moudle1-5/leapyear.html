@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎄 Leap Year Checker 🎄</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #0b3d0b; /* سبز تیره */
+    }
+
+    .card {
+      text-align: center;
+      padding: 30px 40px;
+      border-radius: 15px;
+      background: #ffffff;       /* سفید واضح */
+      color: #222;               /* متن تیره */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      border: 2px solid #d4af37;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 26px;
+    }
+
+    .subtitle {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .emoji {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="emoji">🎅✨🎄</div>
+    <h1>Christmas Leap Year Checker</h1>
+    <p class="subtitle">
+      Enter a year when asked and see if Santa gets an extra day that year!
+    </p>
+    <p id="result">Waiting for input...</p>
+  </div>
+
+  <script src="leapyear.js"></script>
+</body>
+</html>
+

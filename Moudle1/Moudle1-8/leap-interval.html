@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Year Leap Years</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: radial-gradient(circle at top, #1b2845, #050814);
+      color: #f5f5f5;
+    }
+
+    .card {
+      text-align: center;
+      padding: 30px 40px;
+      border-radius: 22px;
+      background: rgba(10, 10, 25, 0.9);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 215, 0, 0.6);
+      max-width: 520px;
+      width: 90%;
+    }
+
+    .emoji {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 24px;
+      color: #ffd700;
+    }
+
+    .subtitle {
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    ul {
+      list-style-type: disc;
+      text-align: left;
+      margin: 0 auto;
+      padding-left: 26px;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    li {
+      margin: 3px 0;
+      font-size: 14px;
+    }
+
+    .note {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="emoji">🎆🎉🥂</div>
+    <h1>New Year Leap Years</h1>
+    <p class="subtitle">
+      Enter a start and end year in the pop-ups. All leap years in that
+      interval will appear here – great for checking extra days before New Year!
+    </p>
+    <ul id="leap-years"></ul>
+    <p class="note">Example: 1990 to 2025</p>
+  </div>
+
+  <script src="leap-interval.js"></script>
+</body>
+</html>
