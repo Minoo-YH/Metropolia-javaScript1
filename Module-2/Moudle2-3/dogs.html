@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <title> (Dog Names)</title>
+  <style>
+    :root{
+      --card-bg: #ffffffee;
+      --text: #333;
+      --accent: #ffb703;
+    }
+    *{ box-sizing: border-box; }
+    body{
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      /* پس‌زمینه الگوی پنجه سگ */
+      background:
+        radial-gradient(circle at 20px 20px, rgba(0,0,0,0.05) 6px, transparent 7px) 0 0/48px 48px,
+        radial-gradient(circle at 44px 44px, rgba(0,0,0,0.05) 4px, transparent 5px) 0 0/48px 48px,
+        linear-gradient(135deg, #fde68a, #fbcfe8);
+    }
+    .card{
+      width: min(520px, 92vw);
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 28px 32px;
+      box-shadow:
+        0 10px 25px rgba(0,0,0,.12),
+        0 0 0 2px rgba(0,0,0,.05) inset;
+      backdrop-filter: blur(4px);
+      position: relative;
+    }
+    .header{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .doggo{
+      font-size: 28px;
+    }
+    h1{
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: .3px;
+    }
+    .subtitle{
+      margin: 4px 0 16px;
+      font-size: 13px;
+      opacity: .8;
+    }
+    ul{
+      margin: 0;
+      padding-left: 22px;
+    }
+    li{
+      margin: 6px 0;
+      font-weight: 600;
+      /* سایه خیلی لطیف برای خوانایی بهتر رنگ‌ها */
+      text-shadow: 0 1px 0 rgba(255,255,255,.6);
+    }
+    .badge{
+      display:inline-block;
+      padding:.2rem .5rem;
+      border-radius:999px;
+      background:#fff4;
+      border:1px solid #0001;
+      font-size:12px;
+      margin-left:8px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="doggo">🐶🐾</div>
+      <h1>Dog Names (Unique • Capitalized • Colorful)</h1>
+    </div>
+    <p class="subtitle">
+      Enter six unique dog names in the prompts. Duplicates are not accepted.  
+      Names will be shown in reverse alphabetical order (Z → A).
+    </p>
+
+    <ul id="dog-list"></ul>
+  </div>
+  <script src="dogs.js"></script>
+</body>
+</html>

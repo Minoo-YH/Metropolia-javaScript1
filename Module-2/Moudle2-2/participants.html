@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Participants</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+      color: #444;
+    }
+    .card {
+      padding: 24px 32px;
+      border-radius: 18px;
+      background: #ffffffdd;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      max-width: 420px;
+      width: 90%;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+    ol {
+      text-align: left;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Participants</h1>
+    <p>Names will appear below in alphabetical order.</p>
+    <ol id="participants-list"></ol>
+  </div>
+
+  <script src="participants.js"></script>
+</body>
+</html>

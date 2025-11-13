@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Roll Until Max (Custom Dice)</title>
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+      font-family: "Segoe UI", Arial, sans-serif; color:#1f2937;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #a7f3d0 0, transparent 60%),
+        radial-gradient(900px 500px at 110% 0%, #bfdbfe 0, transparent 60%),
+        linear-gradient(135deg, #fff, #fef3c7);
+    }
+    .card{
+      width:min(600px,92vw);background:#ffffffee;border-radius:20px;
+      padding:28px 32px;box-shadow:0 20px 40px rgba(0,0,0,.12);
+      border:1px solid #00000010;backdrop-filter: blur(4px);
+    }
+    .title{margin:0 0 6px;font-size:22px}
+    .subtitle{margin:0 0 16px;color:#6b7280;font-size:13px}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    input{
+      flex:1 1 160px;padding:.6rem .8rem;border-radius:12px;border:1px solid #d1d5db;
+      font-size:14px
+    }
+    .btn{
+      padding:.6rem 1rem;border-radius:12px;border:0;cursor:pointer;
+      font-weight:700;background:#0ea5e9;color:white;box-shadow:0 8px 20px rgba(14,165,233,.35)
+    }
+    .btn:active{transform:translateY(1px)}
+    ul{margin:14px 0 0;padding-left:22px}
+    li{margin:6px 0;font-weight:600}
+    .done{margin-top:12px;font-size:13px;color:#10b981}
+    .error{margin-top:10px;color:#b91c1c;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 class="title">Roll Until Max (Custom Dice)</h1>
+    <p class="subtitle">Set sides (e.g. 6, 20, 21). Rolls continue until the maximum value appears.</p>
+
+    <div class="row">
+      <input id="sides" type="number" min="2" placeholder="Number of sides (e.g. 6 or 21)" />
+      <button class="btn" id="start-btn">Start</button>
+    </div>
+    <div class="error" id="error"></div>
+
+    <ul id="rolls"></ul>
+    <p class="done" id="done"></p>
+  </div>
+
+  <script src="dice-custom.js"></script>
+</body>
+</html>
