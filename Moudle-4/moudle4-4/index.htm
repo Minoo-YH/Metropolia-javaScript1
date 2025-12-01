@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TVMaze Search App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #4f46e5, #020617 55%);
+      color: #e5e7eb;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 960px;
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 20px;
+      padding: 20px 24px 24px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    }
+
+    h1 {
+      margin: 0 0 4px;
+      font-size: 22px;
+    }
+
+    .subtitle {
+      margin: 0 0 16px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    #search-form {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    #query {
+      flex: 1 1 220px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid #6b7280;
+      background: #020617;
+      color: #e5e7eb;
+      outline: none;
+      font-size: 14px;
+    }
+
+    #query::placeholder {
+      color: #9ca3af;
+    }
+
+    input[type="submit"] {
+      border-radius: 999px;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      background: linear-gradient(135deg, #38bdf8, #4f46e5);
+      color: #020617;
+      white-space: nowrap;
+    }
+
+    .helper {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-bottom: 14px;
+    }
+
+    #results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    article {
+      background: #020617;
+      border-radius: 14px;
+      border: 1px solid #374151;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    article h2 {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    article a {
+      font-size: 13px;
+      color: #38bdf8;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    article a:hover {
+      text-decoration: underline;
+    }
+
+    article img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #4b5563;
+      margin-top: 4px;
+    }
+
+    article div {
+      font-size: 13px;
+      color: #e5e7eb;
+    }
+
+    .no-results {
+      grid-column: 1/-1;
+      color: #fca5a5;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>TVMaze Search</h1>
+    <p class="subtitle">
+      Search for a TV series. Results appear below, and raw JSON is printed in the console.
+    </p>
+
+    <!-- form بدون action، همه‌چیز با JS هندل می‌شود -->
+    <form id="search-form">
+      <input
+        id="query"
+        name="q"
+        type="text"
+        placeholder="Enter TV show name (e.g. Friends)"
+      >
+      <input type="submit" value="Search">
+    </form>
+
+    <p class="helper">
+      Tip: Open <strong>DevTools → Console</strong> to see the JSON response from TVMaze API.
+    </p>
+
+    <!-- این div جاییه که <article>های نتایج رو داخلش append می‌کنیم -->
+    <div id="results"></div>
+  </div>
+
+  <!-- فایل جاوااسکریپت -->
+  <script src="tvmaze.js"></script>
+</body>
+</html>
