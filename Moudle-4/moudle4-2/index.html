@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TVMaze Search App</title>
+
+  <!-- Simple style but still nice -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #4f46e5, #020617 55%);
+      color: #e5e7eb;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      margin: 0;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 800px;
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 20px;
+      padding: 20px 24px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    }
+
+    h1 {
+      margin: 0 0 4px;
+      font-size: 22px;
+    }
+
+    .subtitle {
+      margin: 0 0 16px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    #search-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    #query {
+      flex: 1;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid #6b7280;
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+      outline: none;
+      font-size: 14px;
+    }
+
+    #query::placeholder {
+      color: #9ca3af;
+    }
+
+    input[type="submit"] {
+      border-radius: 999px;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      background: linear-gradient(135deg, #38bdf8, #4f46e5);
+      color: #020617;
+    }
+
+    .helper {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
+
+    #results {
+      max-height: 350px;
+      overflow-y: auto;
+      border-radius: 12px;
+      border: 1px solid #374151;
+      padding: 10px;
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 13px;
+    }
+
+    .show-card {
+      border-radius: 10px;
+      border: 1px solid #4b5563;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+      background: #020617;
+    }
+
+    .show-card h2 {
+      font-size: 14px;
+      margin: 0 0 4px;
+    }
+
+    .no-results {
+      color: #fca5a5;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>TVMaze Search</h1>
+    <p class="subtitle">Search a TV series and see the result in console + here.</p>
+
+   
+    <form id="search-form">
+      <input
+        id="query"
+        name="q"
+        type="text"
+        placeholder="Enter TV show name (e.g. Friends)"
+      >
+      <input type="submit" value="Search">
+    </form>
+
+    <p class="helper">
+      Open <strong>DevTools → Console</strong> to see raw JSON response.
+    </p>
+
+    <div id="results">
+      Start by typing a show name and clicking Search.
+    </div>
+  </div>
+
+ 
+  <script src="tvmaze.js"></script>
+</body>
+</html>
