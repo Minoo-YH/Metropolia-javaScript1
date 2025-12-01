@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module 4 - 1: TVMaze Search</title>
+</head>
+<body>
+  <h1>TV Series Search (TVMaze)</h1>
+
+  <!--
+    MODULE 4 - 1 (TVMaze)
+    Part A: basic HTML form
+    Part B: use JavaScript + fetch to get data and print to console
+  -->
+
+  <!-- Basic search form -->
+  <form id="search-form">
+    <input id="query" name="q" type="text" placeholder="Enter TV show name">
+    <input type="submit" value="Search">
+  </form>
+
+  <script>
+    // 1. Get form and input elements
+    const form = document.getElementById('search-form');
+    const queryInput = document.getElementById('query');
+
+    // 2. Listen to form submit event
+    form.addEventListener('submit', function (event) {
+      // Prevent form from going to a new page
+      event.preventDefault();
+
+      // Get value entered by the user
+      const query = queryInput.value.trim();
+
+      if (!query) {
+        console.log('Please enter a TV show name.');
+        return;
+      }
+
+      // Build TVMaze API URL
+      const url = `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`;
+
+      // 3. Send request with fetch
+      fetch(url)
+        .then(function (response) {
+          // Check response is OK
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          // Parse JSON
+          return response.json();
+        })
+        .then(function (data) {
+          // 4. Print full data into console (this is what the assignment wants)
+          console.log('Full API response:', data);
+
+          // Optional: print some important fields for each show
+          data.forEach(function (item, index) {
+            const show = item.show;
+            console.log('------------------------');
+            console.log(`Result #${index + 1}`);
+            console.log('Name:', show.name);
+            console.log('Language:', show.language);
+            console.log('Genres:', show.genres);
+            console.log('Premiered:', show.premiered);
+            console.log('Official Site:', show.officialSite);
+          });
+        })
+        .catch(function (error) {
+          // Handle errors
+          console.error('Fetch error:', error);
+        });
+    });
+  </script>
+</body>
+</html>
+
