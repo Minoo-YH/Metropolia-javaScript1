@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Route to Karaportti 2</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Route to School (Karaportti 2)</h1>
+    <p>Enter your address to see a public transport route to Karaportti 2, Espoo.</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <form id="route-form">
+        <label for="address-input">Your address:</label>
+        <input
+          type="text"
+          id="address-input"
+          name="address"
+          placeholder="e.g. Lammaslammentie 13, Espoo"
+          autocomplete="street-address"
+          required
+        />
+        <button type="submit">Find route</button>
+      </form>
+
+      <div id="info">
+        <p><strong>Trip start:</strong> <span id="start-time">–</span></p>
+        <p><strong>Trip end:</strong> <span id="end-time">–</span></p>
+        <p id="status"></p>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- First load config (defines DIGITRANSIT_API_KEY), then app -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
